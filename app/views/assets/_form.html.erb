@@ -43,7 +43,7 @@
   <div class="control-group">
     <%= f.label :location_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :location_id, :class => 'form-control' %>
+      <%= f.collection_select :location_id, Location.order(:name),:id,:name, :class => 'form-control' %>
     </div>
     <%= error_span(@asset[:location_id]) %>
   </div>

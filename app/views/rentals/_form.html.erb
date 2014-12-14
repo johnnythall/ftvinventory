@@ -18,14 +18,14 @@
   <div class="control-group">
     <%= f.label :user_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :user_id, :class => 'form-control' %>
+      <%= f.collection_select :user_id, User.order(:last_name),:id,:last_name, :class => 'form-control' %>
     </div>
     <%= error_span(@rental[:user_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :asset_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :asset_id, :class => 'form-control' %>
+      <%= f.collection_select :asset_id, Asset.order(:name),:id,:name, :class => 'form-control' %>
     </div>
     <%= error_span(@rental[:asset_id]) %>
   </div>
